@@ -41,7 +41,11 @@ public class Processing extends PApplet{
     private void drawBall(int ballNumber) {
         int ballXCoordinate;
         ballXCoordinate = (xCounter*ballNumber)%WIDTH;
-        ellipse(ballXCoordinate, (ballNumber*HEIGHT)/5, DIAMETER, DIAMETER);
+        ellipse(ballXCoordinate, getYCoordinate(ballNumber), DIAMETER, DIAMETER);
+    }
+
+    private int getYCoordinate(int ballNumber) {
+        return (ballNumber * HEIGHT) / 5;
     }
 
     private void paintWhite() {
